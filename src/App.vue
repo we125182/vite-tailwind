@@ -1,20 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <div class="text-left">
-    <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div class="flex">
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <div class="text-left">
+      <HelloWorld msg="Hello Vue 3 + Vite" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-})
+    HelloWorld,
+  },
+});
 </script>
 
 <style>
