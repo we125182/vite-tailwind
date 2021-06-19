@@ -12,6 +12,7 @@ steps:
     image: plugins/gh-pages
     depends_on: [build]
     settings:
+      username: we125182
       ssh_key:
         from_secret: ssh_key
       pages_directory: dist/
