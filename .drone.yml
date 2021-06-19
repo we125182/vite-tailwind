@@ -10,6 +10,7 @@ steps:
       - npm run build
   - name: publish  
     image: plugins/gh-pages
+    depends_on: [build]
     settings:
       ssh_key:
         from_secret: ssh_key
