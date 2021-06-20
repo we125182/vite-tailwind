@@ -45,3 +45,29 @@ trigger:
     - main
   event:
     - push
+
+
+---
+kind: pipeline
+type: docker
+name: notify
+
+clone:
+  disable: true
+
+depends_on: [production]
+
+steps:
+  - name: email
+    image: drillster/drone-email
+    settings:
+      subject: "Drone build: [{{ build.status }}] {{ repo.name }} #{{ build.number }}"
+      host: smtp.163.com
+      port: 465
+      from: drone@we125182.top
+      username:
+        from_secret: email_user
+      password:
+        from_secret: email_password
+      when:
+        status: [ success, failure ]
