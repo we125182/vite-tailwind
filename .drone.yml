@@ -2,21 +2,25 @@ kind: pipeline
 name: production
 steps:
   # web lint
-  - name: build
-    image: node:14
-    depends_on: [clone]
+  # - name: build
+  #   image: node:14
+  #   depends_on: [clone]
+  #   commands:
+  #     - npm ci --registry https://registry.npm.taobao.org
+  #     - npm run build
+  # - name: publish  
+  #   image: plugins/gh-pages
+  #   depends_on: [build]
+  #   settings:
+  #     username:
+  #       from_secret: username
+  #     password:
+  #       from_secret: password
+  #     pages_directory: dist/
+  - name: test
     commands:
-      - npm ci --registry https://registry.npm.taobao.org
-      - npm run build
-  - name: publish  
-    image: plugins/gh-pages
-    depends_on: [build]
-    settings:
-      username:
-        from_secret: username
-      password:
-        from_secret: password
-      pages_directory: dist/
+      - docker --version
+      - ls /drone/src
 trigger:
   branch:
     - main
