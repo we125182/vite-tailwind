@@ -2,6 +2,11 @@ kind: pipeline
 type: exec
 name: production
 steps:
+  - name: test
+    depends_on: [clone]
+    commands:
+      - docker --version
+      - ls /drone/src
   # web lint
   # - name: build
   #   image: node:14
@@ -18,10 +23,6 @@ steps:
   #     password:
   #       from_secret: password
   #     pages_directory: dist/
-  - name: test
-    commands:
-      - docker --version
-      - ls /drone/src
 trigger:
   branch:
     - main
