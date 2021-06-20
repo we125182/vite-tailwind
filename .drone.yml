@@ -12,9 +12,10 @@ steps:
     image: plugins/gh-pages
     depends_on: [build]
     settings:
-      username: we125182
-      ssh_key:
-        from_secret: ssh_key
+      username:
+        from_secret: github_username
+      password:
+        from_secret: github_password
       pages_directory: dist/
 trigger:
   branch:
