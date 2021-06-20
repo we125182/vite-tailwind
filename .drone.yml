@@ -64,7 +64,8 @@ steps:
       subject: "Drone build: [{{ build.status }}] {{ repo.name }} #{{ build.number }}"
       host: smtp.163.com
       port: 465
-      from: drone@we125182.top
+      from:
+        from_secret: email_from
       username:
         from_secret: email_user
       password:
