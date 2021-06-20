@@ -13,15 +13,6 @@ steps:
   - name: exec
     commands:
       - ls /drone/src
-  # - name: publish  
-  #   image: plugins/gh-pages
-  #   depends_on: [build]
-  #   settings:
-  #     username:
-  #       from_secret: username
-  #     password:
-  #       from_secret: password
-  #     pages_directory: dist/
 
 trigger:
   branch:
