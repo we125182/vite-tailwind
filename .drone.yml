@@ -25,6 +25,7 @@ steps:
     image: appleboy/drone-scp
     depends_on: [build]
     settings:
+      strip_components: 1
       host:
         from_secret: host_name
       user:
