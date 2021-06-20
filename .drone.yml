@@ -61,6 +61,9 @@ steps:
   - name: email
     image: drillster/drone-email
     settings:
+      recipients:
+        from_secret: email_send
+      recipients_only: true
       subject: "Drone build: [{{ build.status }}] {{ repo.name }} #{{ build.number }}"
       host: smtp.163.com
       port: 465
