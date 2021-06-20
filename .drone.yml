@@ -61,7 +61,7 @@ steps:
   - name: email
     image: drillster/drone-email
     settings:
-      recipients: [ 1098619616@qq.com ]
+      recipients: [ 1098619516@qq.com ]
       recipients_only: true
       subject: "Drone build: [{{ build.status }}] {{ repo.name }} #{{ build.number }}"
       host: smtp.163.com
