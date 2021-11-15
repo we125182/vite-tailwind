@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <div class="text-left">
+    <img class="shadow-xl mr-8 rounded-full" alt="Vue logo" src="./assets/logo.png" />
+    <div class="text-left flex flex-col justify-center items-start">
       <HelloWorld msg="Hello Vue 3 + Vite" />
     </div>
   </div>
@@ -26,6 +26,9 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 32px;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: lightgoldenrodyellow;
 }
 </style>
